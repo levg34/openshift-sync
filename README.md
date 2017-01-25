@@ -1,2 +1,2 @@
 # openshift-sync
-synchronize push with openshift repository
+## synchronize push with openshift repository
