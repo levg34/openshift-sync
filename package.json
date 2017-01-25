@@ -1,0 +1,26 @@
+{
+  "name": "openshift-sync",
+  "version": "1.0.0",
+  "description": "autosync github openshift",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/levg34/openshift-sync.git"
+  },
+  "keywords": [
+    "openshift",
+    "github"
+  ],
+  "author": "levg34",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/levg34/openshift-sync/issues"
+  },
+  "homepage": "https://github.com/levg34/openshift-sync#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
