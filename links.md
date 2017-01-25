@@ -1,0 +1,3 @@
+- https://developer.github.com/webhooks/creating/
+- http://stackoverflow.com/questions/23206686/how-to-automate-sync-between-a-github-repository-and-openshift
+- http://stackoverflow.com/questions/12657168/can-i-use-my-existing-git-repo-with-openshift
