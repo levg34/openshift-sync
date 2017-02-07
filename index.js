@@ -7,10 +7,21 @@ var server = require('http').createServer(app)
 var bodyParser = require('body-parser')
 var exec = require('child_process').exec
 
+var map = [{name:'nodejs-chat',ssh:'588766d40c1e66f625000171@nodechat-levg34.rhcloud.com'}]
+
 function execute(command, callback){
     exec(command, function(error, stdout, stderr){
 		callback(stdout)
 	})
+}
+
+function getSSH(project) {
+	var index = map.map(function (e) {
+		return e.name
+	}).indexOf(project)
+	if (index!=-1) {
+		return map[index].ssh
+	}
 }
 
 app.use(bodyParser.json())
@@ -20,8 +31,14 @@ app.get('/', function (req, res) {
 })
 
 app.post('/sync', function (req, res) {
-	console.log(req.body)
-	execute('./connect.sh',console.log)
+	var body = req.body
+	var project = body.repository.name
+	var ssh = getSSH(project)
+	if (ssh) {
+		execute('./connect.sh '+ssh,console.log)
+	} else {
+		execute('./update',console.log)
+	}
 	res.send(JSON.stringify({}))
 })
 
