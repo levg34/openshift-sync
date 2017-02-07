@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/levg34/openshift-sync#readme",
   "dependencies": {
+    "body-parser": "^1.16.0",
     "express": "^4.14.0"
   }
 }
