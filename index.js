@@ -4,6 +4,7 @@ var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
 var express = require('express')
 var app = express()
 var server = require('http').createServer(app)
+var bodyParser = require('body-parser')
 var exec = require('child_process').exec
 
 function execute(command, callback){
@@ -11,6 +12,8 @@ function execute(command, callback){
 		callback(stdout)
 	})
 }
+
+app.use(bodyParser.json())
 
 app.get('/', function (req, res) {
 	res.send(JSON.stringify({}))
