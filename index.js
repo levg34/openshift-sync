@@ -3,7 +3,8 @@ var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
 
 var express = require('express')
 var app = express()
-var exec = require('child_process').exec;
+var server = require('http').createServer(app)
+var exec = require('child_process').exec
 
 function execute(command, callback){
     exec(command, function(error, stdout, stderr){
@@ -21,6 +22,6 @@ app.post('/sync', function (req, res) {
 	res.send(JSON.stringify({}))
 })
 
-app.listen(server_port, function () {
+server.listen(server_port,server_ip_address,function () {
 	console.log("Listening on " + server_ip_address + ", port " + server_port)
 })
