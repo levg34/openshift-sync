@@ -7,7 +7,7 @@ var server = require('http').createServer(app)
 var bodyParser = require('body-parser')
 var exec = require('child_process').exec
 
-var map = [{name:'nodejs-chat',ssh:'588766d40c1e66f625000171@nodechat-levg34.rhcloud.com'}]
+var map = [{name:'nodejs-chat',ssh:'588766d40c1e66f625000171@nodechat-levg34.rhcloud.com'},{name:'image-uploader',ssh:'5914202e2d5271f7e4000100@uploader-levg34.rhcloud.com'}]
 
 function execute(command, callback){
     exec(command, function(error, stdout, stderr){
