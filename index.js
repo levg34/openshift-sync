@@ -30,6 +30,10 @@ app.get('/', function (req, res) {
 	res.send(JSON.stringify({}))
 })
 
+app.get('/ping', function (req, res) {
+	res.sendFile(__dirname + '/icon.png')
+})
+
 app.post('/sync', function (req, res) {
 	var body = req.body
 	var project = body.repository.name
